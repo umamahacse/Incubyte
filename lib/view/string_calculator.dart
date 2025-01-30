@@ -30,7 +30,7 @@ class _StringCalculatorState extends State<StringCalculator> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text('Enter String',
-                    style: TextStyle(color: AppColors.primaryTextColor, fontSize: 12),),
+                    style: TextStyle(color: AppColors.primaryTextColor, fontSize: 16),),
                     const SizedBox(height: 20,),
                     TextField(
                       decoration: const InputDecoration(
@@ -44,7 +44,28 @@ class _StringCalculatorState extends State<StringCalculator> {
                         ),
                       ),
                       controller: provider.inputStringController,
-                    )
+                    ),
+                    const SizedBox(height: 50,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 40),
+                          decoration: const BoxDecoration(
+                            color: AppColors.buttonColor,
+                            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          ),
+                          child: const Text("Calculate String count", style: TextStyle(color: AppColors.primaryTextColor, fontSize: 14),)),
+                      ],
+                    ),
+                    const SizedBox(height: 50,),
+                    Row(
+                      children: [
+                        Text('String Count: ${provider.count}',
+                        style: const TextStyle(color: AppColors.primaryTextColor, fontSize: 16),),
+                      ],
+                    ),
+                    const SizedBox(height: 20,),
                   ]),
             );
           }
